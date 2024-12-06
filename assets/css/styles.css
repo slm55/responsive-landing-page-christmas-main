@@ -52,6 +52,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
   --first-color-send: #161212;
@@ -194,8 +195,9 @@ img {
 /* Active menu link */
 .active-link {
   position: relative;
+  color:#03471C;
 }
-.active-link::before {
+/* .active-link::after {
   content: "";
   position: absolute;
   bottom: -0.75rem;
@@ -204,7 +206,7 @@ img {
   height: 5px;
   background-color: var(--title-color);
   border-radius: 50%;
-}
+} */
 
 /* Change background header */
 .scroll-header {

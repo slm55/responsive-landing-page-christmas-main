@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Event Handling</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d1e7dd;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .styleOutput {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Button Event Handling Examples</h1>
+
+    <!-- Button 1: Change Text Content -->
+    <div class="container">
+        <button id="changeTextButton">Click to Change Text</button>
+        <div class="output" id="textOutput">Original Text</div>
+    </div>
+
+    <!-- Button 2: Change Style -->
+    <div class="container">
+        <button id="changeStyleButton">Click to Change Style</button>
+        <div class="output styleOutput" id="styleOutput">Styled Text</div>
+    </div>
+
+    <!-- Button 3: Show Alert -->
+    <div class="container">
+        <button id="alertButton">Click for Alert</button>
+    </div>
+
+    <!-- Button 4: Toggle Visibility -->
+    <div class="container">
+        <button id="toggleVisibilityButton">Click to Toggle Visibility</button>
+        <div class="output" id="visibilityOutput">This is a toggleable message!</div>
+    </div>
+
+    <!-- Button 5: Change Button Text -->
+    <div class="container">
+        <button id="changeButtonTextButton">Click to Change Button Text</button>
+    </div>
+
+    <script>
+        // 1. Change Text Content
+        document.getElementById('changeTextButton').addEventListener('click', function() {
+            document.getElementById('textOutput').textContent = 'Text has been changed!';
+        });
+
+        // 2. Change Style
+        document.getElementById('changeStyleButton').addEventListener('click', function() {
+            const styleOutput = document.getElementById('styleOutput');
+            styleOutput.style.color = '#4CAF50';  // Change text color
+            styleOutput.style.fontSize = '24px';  // Change font size
+            styleOutput.style.fontWeight = 'normal';  // Remove bold
+        });
+
+        // 3. Show Alert
+        document.getElementById('alertButton').addEventListener('click', function() {
+            alert('This is an alert triggered by the button!');
+        });
+
+        // 4. Toggle Visibility
+        document.getElementById('toggleVisibilityButton').addEventListener('click', function() {
+            const visibilityOutput = document.getElementById('visibilityOutput');
+            // Toggle the visibility of the element
+            if (visibilityOutput.style.display === 'none') {
+                visibilityOutput.style.display = 'block';
+            } else {
+                visibilityOutput.style.display = 'none';
+            }
+        });
+
+        // 5. Change Button Text
+        document.getElementById('changeButtonTextButton').addEventListener('click', function() {
+            const button = document.getElementById('changeButtonTextButton');
+            button.textContent = 'Button Text Changed!';
+            button.style.backgroundColor = '#4CAF50'; // Change background color
+            button.style.color = 'white'; // Change text color
+        });
+    </script>
+
+</body>
+</html>
